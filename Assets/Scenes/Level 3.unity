@@ -26603,7 +26603,7 @@ PrefabInstance:
       objectReference: {fileID: 1140484068}
     - target: {fileID: 4166958115237880671, guid: 60e81e1ae9b53f341bcfbd3a9fa43f38, type: 3}
       propertyPath: scoreObjective
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5784868693063163929, guid: 60e81e1ae9b53f341bcfbd3a9fa43f38, type: 3}
       propertyPath: m_Name
