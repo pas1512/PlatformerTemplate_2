@@ -201,7 +201,9 @@ MonoBehaviour:
   healthName: Cherry
   damage: 1
   safeArea: 90
-  force: 5
+  force: 1
+  impactSound: {fileID: 8300000, guid: 5b0025413a3b23d4a8100e2382eead13, type: 3}
+  loseSound: {fileID: 8300000, guid: 2165d5d0121890546b69f4524f66f2ff, type: 3}
 --- !u!114 &8736195683737707490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,10 +217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: 90
-  force: 5
+  force: 0.8
   score: 1
   scoreName: Enemy
   animator: {fileID: 3696759870645122954}
   trigger: {fileID: 1923634180106618082}
   movement: {fileID: 1727167815408819955}
   attack: {fileID: 8629123169331716184}
+  sound: {fileID: 8300000, guid: 6623c4801142ab54ca5182e92c4395ae, type: 3}

@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
     public int value;
     public Animator animator;
     public Collider2D disabledCollider;
+    public AudioClip sound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +25,9 @@ public class Item : MonoBehaviour
             {
                 PlayerPrefs.SetInt(itemName, value);
             }
+
+            if (sound != null)
+                AudioSource.PlayClipAtPoint(sound, transform.position);
         }
     }
 }

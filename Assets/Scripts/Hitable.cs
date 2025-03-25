@@ -16,6 +16,9 @@ public class Hitable : MonoBehaviour
     public MonoBehaviour movement;
     public MonoBehaviour attack;
 
+    [Header("Other")]
+    public AudioClip sound;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -34,6 +37,9 @@ public class Hitable : MonoBehaviour
                 int value = PlayerPrefs.GetInt(scoreName, 0);
                 value += score;
                 PlayerPrefs.SetInt(scoreName, value);
+
+                if(sound != null)
+                    AudioSource.PlayClipAtPoint(sound, transform.position);
             }
         }
     }

@@ -5,7 +5,8 @@ public class PlayerControll : MonoBehaviour
     public float speed = 5;
     public float jumpForce = 4;
     public LayerMask groundMask;
-    private bool groundedToCail;
+    private bool grounded;
+    public AudioClip jumpSound;
 
     private void FixedUpdate()
     {
@@ -18,12 +19,15 @@ public class PlayerControll : MonoBehaviour
         }
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        bool grounded = CheckGround() && groundedToCail;
+        bool grounded = CheckGround() && this.grounded;
 
         if (Input.GetAxis("Jump") > 0 && grounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            groundedToCail = false;
+            this.grounded = false;
+
+            if (jumpSound != null)
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
 
         Animator animator = GetComponent<Animator>();
@@ -41,7 +45,7 @@ public class PlayerControll : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        groundedToCail = collision.contacts[0].normal.y > 0.7f && rb.velocity.y <= speed * Time.deltaTime;
+        grounded = collision.contacts[0].normal.y > 0.7f && rb.velocity.y <= speed * Time.deltaTime;
     }
 
     private bool CheckGround()

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Dangerous : MonoBehaviour
@@ -6,6 +7,8 @@ public class Dangerous : MonoBehaviour
     public int damage = 1;
     [Range(0, 180)] public float safeArea = 0;
     public float force = 1;
+    public AudioClip impactSound;
+    public AudioClip loseSound;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,11 +23,17 @@ public class Dangerous : MonoBehaviour
             {
                 Impact impact = collision.collider.GetComponent<Impact>();
                 impact?.Apply(transform.position, force);
+
+                if (impactSound != null)
+                    AudioSource.PlayClipAtPoint(impactSound, transform.position);
             }
             else
             {
                 Lose lose = collision.collider.GetComponent<Lose>();
                 lose?.Apply(transform.position);
+
+                if (loseSound != null)
+                    AudioSource.PlayClipAtPoint(loseSound, transform.position);
             }
         }
     }

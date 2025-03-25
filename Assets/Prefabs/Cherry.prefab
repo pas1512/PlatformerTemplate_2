@@ -160,6 +160,7 @@ MonoBehaviour:
   value: 1
   animator: {fileID: 8635208555979228070}
   disabledCollider: {fileID: 9084143950431130727}
+  sound: {fileID: 8300000, guid: 1b9c61a8cec79b949a4d7e5efe308c7c, type: 3}
 --- !u!114 &7630900057919680386
 MonoBehaviour:
   m_ObjectHideFlags: 0

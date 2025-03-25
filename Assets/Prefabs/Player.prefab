@@ -169,6 +169,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  jumpSound: {fileID: 8300000, guid: c4f9700a60930534cb76cff0ae6ad51d, type: 3}
 --- !u!95 &4831784978093421676
 Animator:
   serializedVersion: 5
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 400616951126483306}
-  force: {x: 3, y: 5}
+  force: {x: 5, y: 5}
   maxForce: 10
 --- !u!114 &1492135748602773277
 MonoBehaviour:

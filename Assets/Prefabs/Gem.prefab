@@ -139,6 +139,7 @@ MonoBehaviour:
   value: 1
   animator: {fileID: 1032462456377213458}
   disabledCollider: {fileID: 9198552884985588774}
+  sound: {fileID: 8300000, guid: f5e36d27a4191f34eb6c0d955dbaa459, type: 3}
 --- !u!95 &1032462456377213458
 Animator:
   serializedVersion: 5
